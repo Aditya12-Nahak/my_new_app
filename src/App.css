@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
+body{
+  margin:0;
+  font-family:Arial;
+  background:linear-gradient(-45deg,#1a0000,#5c0000,#8b0000,#000000);
+  background-size:400% 400%;
+  animation:bgmove 8s infinite;
+  color:white;
+  text-align:center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@keyframes bgmove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container{
+  padding:30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1{
+  font-size:40px;
+  text-shadow:0 0 20px red;
 }
 
-.App-link {
-  color: #61dafb;
+.stats{
+  display:flex;
+  justify-content:center;
+  gap:40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.row{
+  display:flex;
+  justify-content:center;
+}
+
+.cell{
+  width:80px;
+  height:80px;
+  border:2px solid white;
+  margin:4px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  background:rgba(0,0,0,0.6);
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.cell:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 15px red;
+}
+
+.controls button{
+  margin:10px;
+  padding:12px 20px;
+  font-size:18px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  background:linear-gradient(45deg,#ff0000,#8b0000);
+  color:white;
+}
+
+.controls button:hover{
+  transform:scale(1.1);
+}
+.deathAnimation{
+  font-size:40px;
+  margin:20px;
+  animation:pop 0.6s ease;
+}
+
+@keyframes pop{
+  0%{transform:scale(0)}
+  80%{transform:scale(1.2)}
+  100%{transform:scale(1)}
+}
+.deathAnimation{
+  font-size:40px;
+  margin:20px;
+  animation:pop 0.6s ease;
+}
+
+@keyframes pop{
+  0%{transform:scale(0)}
+  80%{transform:scale(1.2)}
+  100%{transform:scale(1)}
+}
+
+.restart{
+  margin-top:15px;
+  padding:12px 25px;
+  font-size:18px;
+  border:none;
+  border-radius:10px;
+  background:#ff0000;
+  color:white;
+  cursor:pointer;
+}
+
+/* death animation */
+.dead{
+  animation:shake 0.5s infinite;
+}
+
+@keyframes shake{
+  0%{transform:translateX(0)}
+  25%{transform:translateX(-5px)}
+  50%{transform:translateX(5px)}
+  75%{transform:translateX(-5px)}
+  100%{transform:translateX(0)}
 }
